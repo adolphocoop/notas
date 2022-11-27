@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark  mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Notas APP</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <small class="text-white"><a><i class="far fa-user"></i> Usuario: {{usuario.nombre}}</a></small>
+        </li>
+        
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          {{#if usuario}}
+            {{#unless usuario.type}}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="navbarDropdownUsers"><i class="fas fa-users"></i><small> Usuarios</small></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="fas fa-user-friends"></i>Lista de Usuarios</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="fas fa-user-plus">Agregar Usuario</i></a>
+                  </li>
+                </ul>
+              </li>
+            {{/unless}}
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="far fa-file-alt"></i> <small> Notas </small>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/notas"><i class="far fa-copy"></i> Listar Notas</a></li>
+            <li><a class="dropdown-item" href="/notes/add"><i class="far fa-file"></i> Agregar Notas</a></li>
+            <li><a class="dropdown-item" href="/notes/search">Buscar notas</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/users/logout"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+          </ul>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/about"><i class="far fa-question-circle"></i><small>Info</small></a>
+          </li>
+          {{else}}
+          <li class="nav-item"> 
+                <a class="nav-link" href="/users/singin"><i class="fas fa-sign-in-alt"></i> Iniciar</a>
+            </li>
+
+            <li class="nav-item"> 
+                <a class="nav-link" href="/users/singup"><i class="fas fa-user-push"></i> Registrar</a>
+            </li>
+          {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
