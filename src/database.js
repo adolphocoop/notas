@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'); //Manejo de mongo
 require('dotenv').config();
 
-const url = process.env.MONGODB_URL
+const url = "mongodb+srv://notas:Notas.2022@cluster0.zzphokj.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(url)
     .then( ()=>{
